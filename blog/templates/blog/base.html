@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		{% load static %}
+
+		<title>No Sidebar - Helios by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'portfolio/css/main.css' %}" />
+		<link rel="stylesheet" href="{% static 'portfolio/css/custom.css' %}" />
+		<script defer src="{% static 'portfolio/js/custom.js' %}"></script>
+		<noscript><link rel="stylesheet" href="{% static 'portfolio/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="/" id="logo">Helios</a></h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+						{% include 'portfolio/snippets/header_nav.html' %}
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					{% block blog_content %}
+					{% endblock %}
+
+				</div>
+
+			<!-- Footer -->
+				{% include 'portfolio/snippets/footer_snippet.html' %}
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="{% static 'portfolio/js/jquery.min.js'%}"></script>
+		<script src="{% static 'portfolio/js/jquery.dropotron.min.js' %}"></script>
+		<script src="{% static 'portfolio/js/jquery.scrolly.min.js' %}"></script>
+		<script src="{% static 'portfolio/js/jquery.scrollex.min.js' %}"></script>
+		<script src="{% static 'portfolio/js/browser.min.js' %}"></script>
+		<script src="{% static 'portfolio/js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'portfolio/js/util.js' %}"></script>
+		<script src="{% static 'portfolio/js/main.js' %}"></script>
+
+	</body>
+</html>

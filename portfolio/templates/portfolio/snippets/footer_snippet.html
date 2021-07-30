@@ -1,0 +1,57 @@
+{% load static %}
+
+<div id="footer">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-12">
+
+                <!-- Contact -->
+                    <section class="contact">
+                        <header>
+                            <h3>Need a professional touch?</h3>
+                        </header>
+                        <p>Reach out through any of our social handles.</p>
+                        <ul class="icons">
+                            {% for slink in social_links %}
+                            
+                            {% if slink.twitter_url %}
+                            <li><a href="{{slink.twitter_url}}" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                            {% endif %}
+
+                            {% if slink.facebook_url %}
+                            <li><a href="{{slink.facebook_url}}" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            {% endif %}
+
+                            {% if slink.instagram_url %}
+                            <li><a href="{{slink.instagram_url}}" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                            {% endif %}
+
+                            {% if slink.pinterest_url %}
+                            <li><a href="{{slink.pinterest_url}}" target="_blank" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                            {% endif %}
+
+                            {% if slink.dribble_url %}
+                            <li><a href="{{slink.dribble_url}}" target="_blank" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                            {% endif %}
+
+                            {% if slink.linkedin_url %}
+                            <li><a href="{{slink.linkedin_url}}" target="_blank" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
+                            {% endif %}
+
+                            {% endfor %}
+                        </ul>
+                    </section>
+
+                <!-- Copyright -->
+                    <div class="copyright">
+                        <ul class="menu">
+                            <li>&copy; {% now "Y" %} Sule Studios. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+    {% load static %}
+
+
+    <!-- Banner -->
+    <section id="banner">
+        <header>
+            <h2>Hi. Welcome to <strong>Sule Studios</strong>.</h2>
+            <p>
+                A (free) responsive site template by <a href="http://html5up.net">HTML5 UP</a>.
+                Built with HTML5/CSS3 and released under the <a href="http://html5up.net/license">CCA</a> license.
+            </p>
+        </header>
+    </section>
+
+<!-- Carousel -->
+    <section class="carousel">
+        <div class="reel">
+
+            {% for project in projects %}
+            <article>
+                <a href="{{ project.url }}" class="image featured">
+                    <img src="{{project.image.url}}" alt="" />
+                </a>
+                <header>
+                    <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+                </header>
+                <p>{{ project.description }}</p>
+            </article>
+            {% endfor %}
+
+        </div>
+    </section>
+
+<!-- Main -->
+    <div class="wrapper style2">
+
+        {% for blog in blogs %}
+        <article id="main" class="container special">
+            <a href="#" class="image featured"><img src="{{blog.featured_image.url}}" alt="" /></a>
+            <header>
+                <h2><a href="#">{{blog.title}}</a></h2>
+                <p>
+                    {{ blog.content }}
+                </p>
+            </header>
+            <p>
+                {{ blog.content }}
+            </p>
+            <footer>
+                <a href="{% url 'blog:detail' blog.id %}" class="button">Continue Reading</a>
+            </footer>
+        </article>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

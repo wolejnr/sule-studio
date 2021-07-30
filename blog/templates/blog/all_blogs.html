@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% block blog_content %}
+    <div class="container">
+        <div class="row">
+            <h1>Blog Count: {{blogs.count}} blog{{blogs.count | pluralize}}</h1>
+        </div>
+        <div class="row">
+            
+            {% for blog in blogs %}
+                <div class="col-6">
+                    <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+                    <h5>{{ blog.blogdate | date:'F jS Y'}}</h5>
+                    <a href="{% url 'blog:detail' blog.id %}">
+                        <img src="{{blog.featured_image.url}}" width="500">
+                    </a>
+                    
+                    <div>
+                        {{ blog.summary|striptags|truncatechars:100}}
+                    </div>    
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+    
+{% endblock %}
