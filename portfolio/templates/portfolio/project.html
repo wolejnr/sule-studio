@@ -21,15 +21,9 @@
     </div> -->
     <div class="container">
         <div class="grid">
-            <img src="https://source.unsplash.com/400x400?mountain"/>
-            <img src="https://source.unsplash.com/400x400?nature"/>
-            <img src="https://source.unsplash.com/400x400?valley"/>
-            <img src="https://source.unsplash.com/400x400?beach"/>
-            <img src="https://source.unsplash.com/400x400?ocean"/>
-            <img src="https://source.unsplash.com/400x400?water"/>
-            <img src="https://source.unsplash.com/400x400?trees"/>
-            <img src="https://source.unsplash.com/400x400?lake"/>
-            <img src="https://source.unsplash.com/400x400?cliff"/>
+            {% for photo in photos %}
+                <img src="{{photo.url}}" />
+            {% endfor %}
         </div>
     </div>
     

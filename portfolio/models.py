@@ -19,3 +19,10 @@ class SocialMediaLink(models.Model):
 
     def __str__(self):
         return "Social Media Links"
+
+class Photo(models.Model):
+    caption = models.CharField(max_length=200)
+    url = models.URLField(max_length=500)
+
+    def __str__(self):
+        return self.caption

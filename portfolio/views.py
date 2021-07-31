@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Project, SocialMediaLink
+from .models import Project, SocialMediaLink, Photo
 from blog.models import Blog
 
 # Create your views here.
@@ -12,4 +12,5 @@ def home(request):
 def project(request):
     social_links = SocialMediaLink.objects.all()
     projects = Project.objects.all()
-    return render(request, 'portfolio/project.html', {'social_links': social_links, 'projects': projects})
+    photos = Photo.objects.all()
+    return render(request, 'portfolio/project.html', {'social_links': social_links, 'projects': projects, 'photos': photos})
